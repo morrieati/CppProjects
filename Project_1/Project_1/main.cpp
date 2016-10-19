@@ -1,3 +1,11 @@
+//
+//  main.cpp
+//  Project_1
+//
+//  Created by 刘义盟 on 19/10/2016.
+//  Copyright © 2016 刘义盟. All rights reserved.
+//
+
 #include "stdio.h"
 #include "stdlib.h"
 
@@ -23,13 +31,13 @@ int main(int argc, char const *argv[]) {
 }
 
 void initSTACK(STACK *const p, int main) {
-
+    
 }
 
 void initSTACK(STACK *const p, const STACK &s) {
-
+    
 }
 
 int size(const STACK *const p) {
-    /* code */
+    return 0;
 }
