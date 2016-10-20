@@ -1,6 +1,14 @@
 *.xcodeproj
 *.suo
-Project_2/Project_2.sln
+*.sln
 *.db
 *.vcxproj
-Project_2/Project_2/Project_2.vcxproj.filters
+*.filters
+*.exe
+*.ilk
+*.obj
+*.log
+*.tlog
+*.obj
+*.idb
+*.pdb
