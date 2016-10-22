@@ -1,1 +1,14 @@
 *.xcodeproj
+*.suo
+*.sln
+*.db
+*.vcxproj
+*.filters
+*.exe
+*.ilk
+*.obj
+*.log
+*.tlog
+*.obj
+*.idb
+*.pdb
