@@ -43,7 +43,7 @@ STACK & STACK::pop(int & e)
 STACK & STACK::assign(const STACK & s)
 {
 	// TODO: 在此处插入 return 语句
-	delete elems;
+	delete(elems);
 	elems = new int[s.max];
 	max = s.max;
 	pos = s.pos;
@@ -63,7 +63,7 @@ void STACK::print() const
 
 STACK::~STACK()
 {
-	delete elems;
+	delete(elems);
 	max = 0;
 	pos = 0;
 }
