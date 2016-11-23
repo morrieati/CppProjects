@@ -1,69 +1,85 @@
 #include "stack.h"
 
+using namespace std;
+
 STACK::STACK(int m) : elems(new int[m]), max(m), pos(0) {}
 
-STACK::STACK(const STACK & s) : elems(new int[s.max]), max(s.max), pos(s.pos) {}
+STACK::STACK(const STACK &s) : elems(new int[s.max]), max(s.max), pos(s.pos)
+{
+    for (int i = 0; i < pos; i++)
+    {
+	elems[i] = s.elems[i];
+    }
+}
 
 int STACK::size() const
 {
-	return max;
+    return max;
 }
 
 int STACK::howMany() const
 {
-	return pos;
+    return pos;
 }
 
-STACK & STACK::push(int e)
+STACK &STACK::push(int e)
 {
-	// TODO: ÔÚ´Ë´¦²åÈë return Óï¾ä
-	if (pos == max)
-	{
-		return nullptr;
-	}
-	elems[pos] = e;
-	pos++;
-
+    // TODO: åœ¨æ­¤å¤„æ’å…¥ return è¯­å¥
+    if (pos == max)
+    {
+	cout << "æ ˆæ»¡å’§" << endl;
 	return *this;
+    }
+    elems[pos] = e;
+    pos++;
+    cout << "Push successful!" << endl;
+
+    return *this;
 }
 
-STACK & STACK::pop(int & e)
+STACK &STACK::pop(int &e)
 {
-	// TODO: ÔÚ´Ë´¦²åÈë return Óï¾ä
-	pos--;
-	if (pos < 0) {
-		pos = 0;
-	} else {
-		e = elems[pos];
-	}
+    // TODO: åœ¨æ­¤å¤„æ’å…¥ return è¯­å¥
+    pos--;
+    if (pos < 0)
+    {
+	pos = 0;
+	cout << "The stack is empty,pop fail!" << endl;
+    }
+    else
+    {
+	e = elems[pos];
+	cout << "Pop success! the element is " << e << endl;
+    }
 
-	return *this;
+    return *this;
 }
 
-STACK & STACK::assign(const STACK & s)
+STACK &STACK::assign(const STACK &s)
 {
-	// TODO: ÔÚ´Ë´¦²åÈë return Óï¾ä
-	delete(elems);
-	elems = new int[s.max];
-	max = s.max;
-	pos = s.pos;
-	for (int i = 0; i < max; i++) {
-		elems[i] = s.elems[i];
-	}
+    // TODO: åœ¨æ­¤å¤„æ’å…¥ return è¯­å¥
+    delete[] elems;
+    // elems = new int[s.max];
+    // max = s.max;
+    // pos = s.pos;
+    // for (int i = 0; i < max; i++)
+    // {
+    // elems[i] = s.elems[i];
+    // }
 
-	return *this;
+    return *this;
 }
 
 void STACK::print() const
 {
-	for (size_t i = 0; i < pos; i++) {
-		std::cout << elems[i] << std::endl;
-	}
+    for (size_t i = 0; i < pos; i++)
+    {
+	cout << elems[i] << endl;
+    }
 }
 
 STACK::~STACK()
 {
-	delete(elems);
-	max = 0;
-	pos = 0;
+    delete[] elems;
+    pos = 0;
 }
