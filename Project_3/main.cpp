@@ -11,19 +11,15 @@ int main(int argc, char *argv[])
     {
         do
         {
-            system("cls");
+            system("clear");
             cout << "\n\n----------------Menu for Stack Table On Sequence Structure----------------" << endl;
-            cout << "\t1.InitStack(STACK *const,int)" << endl;
-            cout << "\t6.pop(STACK *const, int&)" << endl;
-            cout << "\t2.InitStack(STACK *const,STACK const&)" << endl;
-            cout << "\t7.assign(STACK*const,const STACK&)" << endl;
-            cout << "\t3.size(const STACK *const p)" << endl;
-            cout << "\t8.print(const STACK *const)" << endl;
-            cout << "\t4.howMany(const STACK *const)" << endl;
-            cout << "\t9.destroySTACK(STACK *const)" << endl;
-            cout << "\t5.push(STACK *const, int)" << endl;
-            cout << "\t0.Exix" << endl;
-            cout << "---------------------------------------------------------------------------" << endl;
+            cout << "\t1.InitStack(int)               2.InitStack(STACK const&)" << endl;
+            cout << "\t3.size()                       4.int()" << endl;
+            cout << "\t5.<<                           6.>>" << endl;
+            cout << "\t7.=                            8.print(const STACK *const)" << endl;
+            cout << "\t9.Destroy" << endl;
+            cout << "\t0.Exit" << endl;
+            cout << "--------------------------------------------------------------------------" << endl;
             cout << "Please input your choice[0-9]: " << endl;
             cin >> choice;
         } while (choice < 0 || choice > 9);
@@ -43,18 +39,18 @@ int main(int argc, char *argv[])
             cout << "The maximum number of elements in the stack is " << p->size() << endl;
             break;
         case 4:
-            cout << "The actual number of elements of the stack is " << p->howMany() << endl;
+            cout << "The actual number of elements of the stack is " << int(*p) << endl;
             break;
         case 5:
             cout << "Please push the stack elemente：" << endl;
             cin >> e;
-            p->push(e);
+            *p << e;
             break;
         case 6:
-            p->pop(e);
+            *p >> e;
             break;
         case 7:
-            p->assign(*s);
+            *p = *s;
             cout << "Stack assignment success!" << endl;
             break;
         case 8:
@@ -67,6 +63,8 @@ int main(int argc, char *argv[])
         case 0:
             break;
         }
+        cin.get();
+        cin.get();
     } while (choice != 0);
 
     return 0;

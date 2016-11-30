@@ -11,19 +11,15 @@ int main(int argc, char *argv[])
     {
         do
         {
-            system("cls");
+            system("clear");
             cout << "\n\n----------------Menu for Stack Table On Sequence Structure----------------" << endl;
-            cout << "\t\t1.InitStack(STACK *const,int)" << endl;
-            cout << "\t6.pop(STACK *const, int&)" << endl;
-            cout << "\t\t2.InitStack(STACK *const,STACK const&)" << endl;
-            cout << "\t7.assign(STACK*const,const STACK&)" << endl;
-            cout << "\t\t3.size(const STACK *const p)" << endl;
-            cout << "\t8.print(const STACK *const)" << endl;
-            cout << "\t\t4.howMany(const STACK *const)" << endl;
-            cout << "\t9.destroySTACK(STACK *const)" << endl;
-            cout << "\t\t5.push(STACK *const, int)" << endl;
-            cout << "\t0.Exix" << endl;
-            cout << "---------------------------------------------------------------------------" << endl;
+            cout << "  1.InitStack(STACK *const,int)  2.InitStack(STACK *const,STACK const&)" << endl;
+            cout << "  3.size(const STACK *const p)   4.howMany(const STACK *const)" << endl;
+            cout << "  5.push(STACK *const, int)      6.pop(STACK *const, int&)" << endl;
+            cout << "  7.assign(STACK*const,const STACK&)" << endl;
+            cout << "  8.print(const STACK *const)    9.destroySTACK(STACK *const)" << endl;
+            cout << "  0.Exix" << endl;
+            cout << "--------------------------------------------------------------------------" << endl;
             cout << "Please input your choice[0-9]: " << endl;
             cin >> choice;
         } while (choice < 0 || choice > 9);
@@ -67,6 +63,8 @@ int main(int argc, char *argv[])
         case 0:
             break;
         }
+        cin.get();
+        cin.get();
     } while (choice != 0);
 
     return 0;
