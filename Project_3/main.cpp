@@ -13,15 +13,15 @@ int main(int argc, char *argv[])
         {
             system("cls");
             cout << "\n\n----------------Menu for Stack Table On Sequence Structure----------------" << endl;
-            cout << "\t\t1.InitStack(STACK *const,int)" << endl;
+            cout << "\t1.InitStack(STACK *const,int)" << endl;
             cout << "\t6.pop(STACK *const, int&)" << endl;
-            cout << "\t\t2.InitStack(STACK *const,STACK const&)" << endl;
+            cout << "\t2.InitStack(STACK *const,STACK const&)" << endl;
             cout << "\t7.assign(STACK*const,const STACK&)" << endl;
-            cout << "\t\t3.size(const STACK *const p)" << endl;
+            cout << "\t3.size(const STACK *const p)" << endl;
             cout << "\t8.print(const STACK *const)" << endl;
-            cout << "\t\t4.howMany(const STACK *const)" << endl;
+            cout << "\t4.howMany(const STACK *const)" << endl;
             cout << "\t9.destroySTACK(STACK *const)" << endl;
-            cout << "\t\t5.push(STACK *const, int)" << endl;
+            cout << "\t5.push(STACK *const, int)" << endl;
             cout << "\t0.Exix" << endl;
             cout << "---------------------------------------------------------------------------" << endl;
             cout << "Please input your choice[0-9]: " << endl;
