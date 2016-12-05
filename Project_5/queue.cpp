@@ -27,58 +27,49 @@ QUEUE &QUEUE::operator<<(int e)
 QUEUE &QUEUE::operator>>(int &e)
 {
     // TODO: 在此处插入 return 语句
-    s1.pos--;
-    s2.pos--;
-    if (s1.pos < 0)
+    int temp = 0;
+    int temPos = s1.pos - 1;
+    for (int i = 0; i < temPos; i++)
     {
-        s1.pos = 0;
-        cout << "The queue is empty, pop fail!" << endl;
-    }
-    else
-    {
-        e = s1.elems[0];
-        int temp = 0;
-        for (int i = 0; i < pos; i++)
-        {
-            s1 >> temp;
-            s2 << temp;
-        }
         s1 >> temp;
-        for (int i = 0; i < pos; i++)
-        {
-            s2 >> temp;
-            s1 << temp;
-        }
-        cout << "Dequeue success! the element is " << e << endl;
+        s2 << temp;
     }
+    s1 >> e;
+    for (int i = 0; i < temPos; i++)
+    {
+        s2 >> temp;
+        s1 << temp;
+    }
+    cout << "Dequeue success! the element is " << e << endl;
 
     return *this;
 }
 
 QUEUE &QUEUE::operator=(const QUEUE &q)
 {
-    delete s1;
-    delete s2;
+    delete &s1;
+    delete &s2;
 
-    s1 = new STACK(q.s1);
-    s2 = new STACK(q.s2);
+    s1 = *(new STACK(q.s1));
+    s2 = *(new STACK(q.s2));
 
     return *this;
 }
 
 void QUEUE::print() const
 {
-    for (int i = 0; i < pos; i++)
-    {
-        cout << s1.elems[i] << endl;
-    }
+    s1.print();
+    // for (int i = 0; i < s1.pos; i++)
+    // {
+    //     cout << s1.elems[i] << endl;
+    // }
 }
 
 QUEUE::~QUEUE()
 {
     if (s1 && s2)
     {
-        delete s1;
-        delete s2;
+        delete &s1;
+        delete &s2;
     }
 }

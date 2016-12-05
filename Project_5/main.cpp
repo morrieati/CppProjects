@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
         switch (choice)
         {
         case 1:
-            cout << "Please input maximum number of elements in the stack:" << endl;
+            cout << "Please input maximum number of elements in the queue:" << endl;
             cin >> m;
             p = new QUEUE(m);
             cout << "Init successful!" << endl;

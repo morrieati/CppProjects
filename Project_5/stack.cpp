@@ -25,12 +25,12 @@ STACK &STACK::operator<<(int e)
     // TODO: 在此处插入 return 语句
     if (pos == max)
     {
-        cout << "栈满咧" << endl;
+        // cout << "栈满咧" << endl;
         return *this;
     }
     elems[pos] = e;
     pos++;
-    cout << "Push successful!" << endl;
+    // cout << "Push successful!" << endl;
 
     return *this;
 }
@@ -42,12 +42,12 @@ STACK &STACK::operator>>(int &e)
     if (pos < 0)
     {
         pos = 0;
-        cout << "The stack is empty, pop fail!" << endl;
+        // cout << "The stack is empty, pop fail!" << endl;
     }
     else
     {
         e = elems[pos];
-        cout << "Pop success! the element is " << e << endl;
+        // cout << "Pop success! the element is " << e << endl;
     }
 
     return *this;
